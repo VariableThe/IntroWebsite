@@ -48,7 +48,45 @@
 }
 
 :root {
-  /* Hex Values to ensure validity without config wrappers */
+  /* LIGHT MODE (Default) */
+  --background: #ffffff;
+  --foreground: #09090b;
+  /* Zinc 950 */
+
+  --card: #ffffff;
+  --card-foreground: #09090b;
+
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+
+  --primary: #f43f5e;
+  /* Rose 500 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f4f4f5;
+  /* Zinc 100 */
+  --secondary-foreground: #18181b;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  /* Zinc 500 */
+
+  --accent: #f43f5e;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #e4e4e7;
+  /* Zinc 200 */
+  --input: #e4e4e7;
+  --ring: #f43f5e;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* DARK MODE (Zinc) */
   --background: #09090b;
   /* Zinc 950 */
   --foreground: #ffffff;
@@ -60,7 +98,6 @@
   --popover-foreground: #ffffff;
 
   --primary: #f43f5e;
-  /* Rose 500 */
   --primary-foreground: #ffffff;
 
   --secondary: #27272a;
@@ -80,8 +117,6 @@
   --border: #27272a;
   --input: #27272a;
   --ring: #f43f5e;
-
-  --radius: 0.5rem;
 }
 
 @layer base {

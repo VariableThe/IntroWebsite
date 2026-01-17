@@ -27,10 +27,10 @@ export default function AboutPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <Card className="overflow-hidden border-none shadow-none bg-zinc-900/40 backdrop-blur-sm border border-zinc-800 hover:bg-zinc-900/60 transition-all hover:scale-[1.02]">
-                            <div className="h-64 bg-zinc-800/50 relative flex items-center justify-center">
+                        <Card className="overflow-hidden border-none shadow-none bg-card/40 backdrop-blur-sm border border-border hover:bg-card/60 transition-all hover:scale-[1.02] hover:border-primary/80">
+                            <div className="h-64 bg-muted/50 relative flex items-center justify-center">
                                 {/* Initials Placeholder */}
-                                <span className="text-6xl font-black text-zinc-700">AS</span>
+                                <span className="text-6xl font-black text-muted-foreground/50">AS</span>
                             </div>
                             <CardContent className="p-6 bg-transparent">
                                 <h3 className="text-2xl font-bold mb-2">Aditya Sharma</h3>
@@ -41,7 +41,7 @@ export default function AboutPage() {
                                 </p>
                                 <div className="flex gap-4">
                                     <a href="https://github.com/VariableThe" target="_blank" rel="noopener noreferrer">
-                                        <Button variant="outline" size="icon" className="rounded-full">
+                                        <Button variant="outline" size="icon" className="rounded-full hover:bg-muted">
                                             <Github className="w-5 h-5" />
                                         </Button>
                                     </a>

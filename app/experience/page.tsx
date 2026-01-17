@@ -65,9 +65,9 @@ export default function ExperiencePage() {
                         className="relative md:pl-12"
                     >
                         {/* Dot */}
-                        <div className="absolute -left-[37px] md:-left-[9px] top-2 w-5 h-5 rounded-full bg-black border-4 border-primary" />
+                        <div className="absolute -left-[37px] md:-left-[9px] top-2 w-5 h-5 rounded-full bg-background border-4 border-primary" />
 
-                        <Card className="border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:bg-zinc-900/60 transition-all hover:scale-[1.02] hover:shadow-xl">
+                        <Card className="border-border bg-card/40 backdrop-blur-sm hover:bg-card/60 transition-all hover:scale-[1.02] hover:shadow-xl hover:border-primary/80">
                             <CardHeader>
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-1">
                                     <CardTitle className="text-xl font-bold">{exp.role}</CardTitle>
@@ -83,7 +83,7 @@ export default function ExperiencePage() {
                                 </p>
                                 <div className="flex flex-wrap gap-2">
                                     {exp.skills.map(skill => (
-                                        <Badge key={skill} variant="secondary" className="text-xs bg-zinc-800 hover:bg-zinc-700">
+                                        <Badge key={skill} variant="secondary" className="text-xs bg-muted text-muted-foreground hover:bg-muted/80">
                                             {skill}
                                         </Badge>
                                     ))}

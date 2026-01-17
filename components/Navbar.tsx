@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
     { name: "Home", href: "/" },
@@ -27,32 +28,35 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex gap-8">
+                <div className="hidden md:flex gap-8 items-center">
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "text-sm font-medium transition-colors hover:text-foreground",
+                                "text-sm font-medium transition-colors hover:text-foreground hover:text-primary",
                                 pathname === item.href
-                                    ? "text-foreground"
+                                    ? "text-primary"
                                     : "text-muted-foreground"
                             )}
                         >
                             {item.name}
                         </Link>
                     ))}
+                    <ThemeToggle />
                 </div>
 
                 {/* Mobile Menu Button */}
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    className="md:hidden"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </Button>
+                <div className="flex md:hidden items-center gap-4">
+                    <ThemeToggle />
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </Button>
+                </div>
             </div>
 
             {/* Mobile Nav */}

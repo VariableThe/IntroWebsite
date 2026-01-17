@@ -58,15 +58,15 @@ export default function ProjectsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <Card className="h-full flex flex-col overflow-hidden border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:bg-zinc-900/60 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 group">
-                            <div className={`h-48 ${project.image} relative flex items-center justify-center`}>
-                                <span className="text-zinc-700 font-mono text-sm px-4 text-center">{project.title} Preview</span>
+                        <Card className="h-full flex flex-col overflow-hidden border-border bg-card/40 backdrop-blur-sm hover:bg-card/60 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/80 group">
+                            <div className={`h-48 ${project.image.replace('bg-zinc-800', 'bg-muted')} relative flex items-center justify-center`}>
+                                <span className="text-muted-foreground font-mono text-sm px-4 text-center">{project.title} Preview</span>
                             </div>
                             <CardHeader>
                                 <CardTitle className="mb-2 text-xl">{project.title}</CardTitle>
                                 <div className="flex flex-wrap gap-2 mb-2">
                                     {project.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary" className="text-[10px] bg-zinc-800 text-zinc-300">
+                                        <Badge key={tag} variant="secondary" className="text-[10px] bg-muted text-muted-foreground">
                                             {tag}
                                         </Badge>
                                     ))}
