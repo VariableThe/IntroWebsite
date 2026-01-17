@@ -58,7 +58,7 @@ export default function ProjectsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <Card className="h-full flex flex-col overflow-hidden hover:border-primary/50 transition-colors border-zinc-800 bg-zinc-900">
+                        <Card className="h-full flex flex-col overflow-hidden border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:bg-zinc-900/60 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 group">
                             <div className={`h-48 ${project.image} relative flex items-center justify-center`}>
                                 <span className="text-zinc-700 font-mono text-sm px-4 text-center">{project.title} Preview</span>
                             </div>

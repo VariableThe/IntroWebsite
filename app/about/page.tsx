@@ -27,12 +27,12 @@ export default function AboutPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <Card className="overflow-hidden border-none shadow-none bg-zinc-900 border border-zinc-800">
-                            <div className="h-64 bg-zinc-800 relative flex items-center justify-center">
+                        <Card className="overflow-hidden border-none shadow-none bg-zinc-900/40 backdrop-blur-sm border border-zinc-800 hover:bg-zinc-900/60 transition-all hover:scale-[1.02]">
+                            <div className="h-64 bg-zinc-800/50 relative flex items-center justify-center">
                                 {/* Initials Placeholder */}
                                 <span className="text-6xl font-black text-zinc-700">AS</span>
                             </div>
-                            <CardContent className="p-6 bg-zinc-900">
+                            <CardContent className="p-6 bg-transparent">
                                 <h3 className="text-2xl font-bold mb-2">Aditya Sharma</h3>
                                 <p className="text-primary font-medium mb-4">Web Developer | Cybersecurity Enthusiast</p>
                                 <p className="text-muted-foreground mb-6">

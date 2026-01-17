@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { InteractiveBackground } from "@/components/InteractiveBackground";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -26,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-foreground bg-transparent`}
       >
+        <InteractiveBackground />
         <Navbar />
         <main className="pt-16">
           {children}
