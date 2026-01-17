@@ -1,65 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+
+
+import { RadialMenu } from "./RadialMenu";
+import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-start px-6 md:px-20 bg-transparent overflow-hidden relative">
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className="z-10 p-8 rounded-2xl bg-background/30 backdrop-blur-sm border border-white/10 shadow-2xl"
-            >
-                <div
-                    className="mb-6 inline-flex"
-                >
-                    <Badge variant="outline" className="text-sm font-medium px-4 py-1.5 rounded-full border-primary/50 text-foreground bg-primary/10 backdrop-blur-md">
-                        <span className="mr-2">👋</span> Hello world, I'm
-                    </Badge>
+        <section className="h-screen w-full flex overflow-hidden relative bg-[#09090b] text-white">
+
+            {/* Background Texture/Grid */}
+            <div className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+                style={{
+                    backgroundImage: "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                    transform: "perspective(500px) rotateX(60deg) scale(1.5) translateY(-100px)"
+                }}
+            />
+
+            {/* Left Side - Radial Menu */}
+            <div className="w-full md:w-3/5 h-full flex items-center justify-start pl-8 md:pl-24 z-10 relative">
+                {/* Decorative splashes */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+                    <div className="absolute top-1/2 left-0 w-[800px] h-[300px] bg-red-600/20 blur-[100px] -rotate-45 transform -translate-x-1/2 -translate-y-1/2" />
                 </div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                    className="text-5xl md:text-8xl font-black tracking-tighter leading-tight mb-8"
-                >
-                    ADITYA SHARMA
-                </motion.h1>
+                <div className="z-10 mt-12 md:mt-0">
+                    <RadialMenu />
+                </div>
+            </div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    className="text-xl md:text-3xl font-light text-muted-foreground mb-4 leading-relaxed max-w-2xl"
+            {/* Right Side - Logo/Character Placeholder */}
+            <div className="hidden md:flex w-2/5 h-full items-center justify-center relative bg-gradient-to-l from-zinc-900/50 to-transparent z-10">
+                <motion.div
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="relative w-full h-full flex items-center justify-center p-12"
                 >
-                    I bridge the gap between <span className="text-primary font-medium">secure systems</span> and <span className="text-primary font-medium">creative design</span>.
-                </motion.p>
-            </motion.div>
+                    {/* Character/Logo Art */}
+                    <div className="w-full max-w-[800px] h-full flex items-center justify-center relative z-50">
+                        <div className="relative w-full aspect-square">
+                            <Image
+                                src="/logo.png"
+                                alt="Logo"
+                                fill
+                                className="object-contain drop-shadow-2xl"
+                                priority
+                            />
+                        </div>
+                    </div>
+                </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4"
-            >
-                <Link href="/projects">
-                    <Button size="lg" className="text-lg px-8 h-14 rounded-full transition-transform hover:scale-105 active:scale-95">
-                        View Projects
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                </Link>
-                <Link href="/about">
-                    <Button size="lg" variant="outline" className="text-lg px-8 h-14 rounded-full transition-transform hover:scale-105 active:scale-95 hover:bg-zinc-800/50">
-                        About Me
-                    </Button>
-                </Link>
-            </motion.div>
+                {/* Date/Time or Status Widget (Style of P3R top right) */}
+                <div className="absolute top-12 right-12 flex flex-col items-end">
+                    <div className="text-6xl font-black italic tracking-tighter text-white">
+                        01/17
+                    </div>
+                    <div className="text-2xl font-bold text-cyan-400 bg-black px-2 mt-1 -skew-x-12">
+                        EVENING
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
+
+

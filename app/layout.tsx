@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { InteractiveBackground } from "@/components/InteractiveBackground";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -32,8 +32,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <InteractiveBackground />
-          <Navbar />
-          <main className="pt-16">
+
+          <nav className="fixed top-6 right-6 z-50">
+            <div className="bg-background/80 backdrop-blur-md border border-border rounded-full p-2 shadow-lg">
+              <ThemeToggle />
+            </div>
+          </nav>
+          <main className="pt-0">
             {children}
           </main>
         </ThemeProvider>
