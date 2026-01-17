@@ -32,12 +32,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <InteractiveBackground />
-
-          <nav className="fixed top-6 right-6 z-50">
+          {/* <nav className="fixed top-6 right-6 z-50">
             <div className="bg-background/80 backdrop-blur-md border border-border rounded-full p-2 shadow-lg">
               <ThemeToggle />
             </div>
-          </nav>
+          </nav> */}
           <main className="pt-0">
             {children}
           </main>
